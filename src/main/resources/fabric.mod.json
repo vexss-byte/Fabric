@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "dunia-mati",
+  "version": "${version}",
+  "name": "Dunia Mati",
+  "description": "Animasi mati, dunia arwah (Nebula) dan hidup kembali sinematik. Konversi dari skrip animasi-mati revisi 21.",
+  "authors": ["-"],
+  "environment": "*",
+  "entrypoints": { "main": ["id.mati.MatiMod"] },
+  "depends": {
+    "fabricloader": ">=0.19.0",
+    "minecraft": "~26.3",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}

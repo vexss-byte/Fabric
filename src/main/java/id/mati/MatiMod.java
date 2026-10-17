@@ -194,6 +194,13 @@ public final class MatiMod implements ModInitializer {
             }
         } catch (Throwable ignored) { }
         net.minecraft.world.entity.Entity e = s.getEntity();
-        return e == null || e.getTags().contains("mati_admin");
+        if (e == null) return true;
+        for (String name : new String[]{"entityTags", "getTags", "tags"}) {
+            try {
+                Object r = e.getClass().getMethod(name).invoke(e);
+                if (r instanceof java.util.Collection<?> col) return col.contains("mati_admin");
+            } catch (Throwable ignored) { }
+        }
+        return false;
     }
 }
